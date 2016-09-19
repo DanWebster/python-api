@@ -54,6 +54,8 @@ def test_create_table_from_file():
     assert ['col1', 'col2'] == [col.name for col in t1.columns]
     fields = [col.field for col in t1.columns]
     rows = [row for row in t1]
+    assert(len(rows) == 2)
+    assert(len(fields) == 2)
     assert rows[0][fields[0]] == 1
     assert rows[0][fields[1]] == 'a'
     assert rows[1][fields[0]] == 2
