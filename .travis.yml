@@ -11,5 +11,5 @@ env:
   - QUILT_URL="https://quilt-heroku.herokuapp.com"
 before_install: pip install pytest pytest-cov
 install: pip install -r requirements.txt
-script: python -m pytest --cov=quilt/ tests
+script: python -m pytest --cov=quilt/ tests -v
 after_success: bash <(curl -s https://codecov.io/bash)
