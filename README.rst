@@ -1,3 +1,5 @@
+.. image:: https://travis-ci.org/quiltdata/python-api.svg?branch=master
+    :target: https://travis-ci.org/quiltdata/python-api
 Python
 ======
 

@@ -1,15 +1,15 @@
 language: python
+cache: pip
 python:
 - '2.7'
-
 env:
   global:
-    - secure: CUtSldmJk7y2PpimxpOWKNi30Ve/pQuzSrGxQyvBE3ny8nTFjzIK+DUcqCVgNDmCqm3AAkE/DsMyCgRCxTpXGW35mhEyCCUlqPlULgGBoBdx5KtMbgOHq+W/+R1utrmliS5N6GexcydAMQ/CaepKdpeyf0fgpLFes6J1WYG/2JGErHS5Vvbprv9E8UMuG7WoSJXtvSK6Cnz06wWVfGkvw5nLbftuCTfKgCzXU5CK6lFUQlDqJwC6bqsuuGCiWI34OnDmbThHZkNG7JfEapIdeWMoHR93LodviShuiGxhpS/WDewGEwzHXmys6oo6Z9/kLJdcJOCmxdFvYWQUGNxDwOSSFpOjKNXIUR4n6rfqOwarPzRGWQd4C7NLKjkiMymBk1qb016+wlGsicFBktPNV5O9KLL6aytRP34Q30yuAhqcQufVw37G3CdsEKEO6rXghIG81RP2AH64fC12TG29gnQmZQTW1Yv99J61X1+jsCAVVcx1rISO5JYRvMWCBuJK0Arpsjj0PE41/3yUT72TgPRZGeh1wDOvl6SCGNgo5xYoMzdhsoCxm//9rYTW/3HmEUtB59+9M9E9+IZnaT+vN+sWOAElPDEsgu1Kn90GIADfQ/wL8B0pstrVrL2zZSrqCyJxlxE2frq4yNJo74hMizE+QTy2fKumtljLN2x7WZM=
+  - secure: q+T0bXPd6uluG6rpz+c110teJBU0+6vH7SaK0KTux4DrKC2hbD3JO//f7i2qKrGnccGx9mRf6EcNXzGK9wLk3Wxp5xh9cw2GfvYf2S2Uehn7k2rnmUXt0DCehqM71BfWWlyPCYiy1dsy8QrfhVkm8rZUrswlo8vZkcmlxcZfMyEgan1l6YB0Xw1kud9fQjLhony3iblYEEkU/dRg4oyWKHGvirw+T+Ou9/avxhcrU+Oyp/f4qCDkScsO2c1X1JM6zXQlO73PlAxO72J9zAGiqNLvq/k/ZTVwhhjsxE49pfKuyLEYI8McgmDcvMVgzrikZa8zmFRsJz+bTGUvknSzguz/InLQjk9m2Bcf0bMr1iyL3033ccg5DfnlO6/UUzm/IwThRGzuks5v/ugqidyrWDal94nzv/UoLOGDXxVfW1vUvtExaRqtQ0Rd+Ae4cNzfXGDHNjCUSupeUW8Nh+q7VA2Py9WWdrvnEFnpxZCmQFSp4vVNzjETOZJGc5H7LTCQDHe7zxZujC3FBuIZqjkq6KB6rlC2ETxZw/K8b50B4N+InGdaWwG9ct8r61CC5a1lulNhOSI5ReO0u8tYBDHxTMWQNv8R0q4CrkBkMCFkbmQDUa1YcpXe63bhEiA4yzpgjmRHSJT/Yce49chpDBOM2FBaqRfQdH3hbHTT7RxXw8o=
+  - secure: w7NicXugzw1LNLYG8twjqN8nCHOTYYvIzCb3ZHA0XTK2Y0elC7JUmqkV6/SrJaHjyqwmbvIcz2eGyS0gpcTgC8g1lLJUdsXm+EZ8W3w4+960nIkU96w2BGwI4wvFwgvkZ2SjtLRYzYHMtVMJ+ltzrp8SZv24YHkhihRxgIWMhjo2k12JYz8co/jXFnWPeQQ7o18K6EiEBN5obnkQtnh84xaApTcQIdz5k4mCejPrBuHxnH8ye0oy/hyhKu3VHaBzqnB0K8DzmMZEvck4sXdaRxPU0W+LcgRjAo5FGop2s2vAhmSJHn/OG4tdNBI058rHlXSM9OVnUpJdssEw/6eKNeruynsj5CQ2NfElCem+RTSf5w5ZsN9u3x9P6fKsvSfOBQ1/YrOOe3s/pQYCs0cXlYYxJe4aRrJJkOtdFbqQhIQuU4oLUtVSXs8GUQ1TGpPAJn5wJqtTlbondPxnmDFQpR62ouyEQazx+NNIK5yFIUD/vUzxU52hk6KoPk4aiJeQN0Kgqz5F+H3Cj+Hy0sGVpLnv3rCCLWaUz3lK7oXbCHtf+4ZOYK99y73Gv/4oX3lrFB4ms6Dgh6HOVYnCSkFshHAhigSukrKFKhu9PAbIzsg62hl3DXSTWpt3b4Yt6uzF+gWO2Oj4SatbcPd/9/UPVJkiV4TejldbLRb5C4Z9YqA=
   matrix:
-    - QUILT_URL="https://quiltdata.com"
-    - QUILT_URL="https://quilt-heroku.herokuapp.com"
-
+  - QUILT_URL="https://quiltdata.com"
+  - QUILT_URL="https://quilt-heroku.herokuapp.com"
 before_install: pip install pytest pytest-cov
 install: pip install -r requirements.txt
-script: python -m pytest --cov=quilt/ tests
+script: python -m pytest --cov=quilt/ tests -v
 after_success: bash <(curl -s https://codecov.io/bash)

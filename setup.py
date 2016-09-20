@@ -24,8 +24,8 @@ setup(
     author='quiltdata',
     author_email='founders@quiltdata.io',
     license='LICENSE.txt',
-    url='https://github.com/quiltdata/API',
-    download_url='https://github.com/quiltdata/API/tarball/0.1.6',
+    url='https://github.com/quiltdata/python-api',
+    download_url='https://github.com/quiltdata/python-api/tarball/0.1.6',
     keywords='quiltdata api social shareable data platform',
     install_requires=[
         'requests==2.11.1',
